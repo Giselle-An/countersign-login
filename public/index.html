@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173f35">
+  <title>Sign in · Countersign</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <section class="story" aria-label="About Countersign">
+      <a class="brand" href="/" aria-label="Countersign home"><img src="/favicon.svg" alt="" width="36" height="36"><span>countersign<span class="brand-dot">.</span></span></a>
+      <div class="story-content">
+        <div class="eyebrow"><span class="small-line"></span> YOUR RULES. EVERY PAYMENT.</div>
+        <h1>Give your AI<br> room to work.<br> <span>Keep control.</span></h1>
+        <p class="story-copy">A workspace for agent payments, built around<br class="desktop-break"> the people and policies behind them.</p>
+        <div class="flow-card" aria-label="Planned payment workflow">
+          <div class="flow-header"><span>THE PAYMENT WORKFLOW</span><span class="flow-label">PRODUCT DESIGN</span></div>
+          <div class="flow-row"><span class="step-icon">01</span><div><strong>Agent requests</strong><span>Invoice and payment details</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></div>
+          <div class="flow-connector"></div>
+          <div class="flow-row"><span class="step-icon">02</span><div><strong>Rules check</strong><span>Supplier, purchase order and limits</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></div>
+          <div class="flow-connector"></div>
+          <div class="flow-row"><span class="step-icon final-step"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg></span><div><strong>Pay within policy</strong><span>People stay in charge of changes</span></div></div>
+        </div>
+      </div>
+      <div class="story-footer"><span>Built for thoughtful autonomy.</span><span>01 / ACCESS</span></div>
+    </section>
+
+    <section class="access" aria-label="Account access">
+      <div class="topbar"><span class="preview-badge"><span></span> EARLY PREVIEW</span><button id="top-switch" class="text-button" type="button">Create an account <span aria-hidden="true">↗</span></button></div>
+      <div id="auth-view" class="auth-content">
+        <div class="form-heading"><div class="section-number">LET’S GET YOU STARTED</div><h2 id="form-title">Welcome back.</h2><p id="form-subtitle">Sign in to your Countersign workspace.</p></div>
+        <div class="tabs" role="tablist" aria-label="Account access mode"><button id="login-tab" type="button" role="tab" aria-selected="true" aria-controls="form-panel" class="active">Sign in</button><button id="register-tab" type="button" role="tab" aria-selected="false" aria-controls="form-panel">Create account</button></div>
+        <div id="form-panel" role="tabpanel" aria-labelledby="login-tab">
+          <form id="auth-form" novalidate>
+            <div id="name-field" class="field" hidden><label for="name">Full name</label><input id="name" name="name" type="text" autocomplete="name" minlength="2" maxlength="60" placeholder="Your name" disabled><p id="name-error" class="field-error" hidden></p></div>
+            <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="username" maxlength="254" placeholder="you@company.com" required><p id="email-error" class="field-error" hidden></p></div>
+            <div class="field"><div class="label-row"><label for="password">Password</label><span id="password-hint">10 characters minimum</span></div><div class="password-wrap"><input id="password" name="password" type="password" autocomplete="current-password" minlength="10" maxlength="128" placeholder="Enter your password" required><button id="toggle-password" class="eye-button" type="button" aria-label="Show password" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button></div><p id="password-error" class="field-error" hidden></p></div>
+            <div id="confirm-field" class="field" hidden><label for="confirm-password">Confirm password</label><input id="confirm-password" type="password" autocomplete="new-password" maxlength="128" placeholder="Enter your password again" disabled><p id="confirm-error" class="field-error" hidden></p></div>
+            <p id="form-message" class="form-message" role="alert" hidden></p>
+            <button id="submit-button" class="primary-button" type="submit"><span id="submit-label">Sign in</span><span id="submit-icon" aria-hidden="true">→</span></button>
+          </form>
+        </div>
+        <p id="switch-copy" class="switch-copy">New to Countersign? <button id="bottom-switch" class="text-button" type="button">Create an account</button></p>
+        <div class="access-note"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><p>This is your workspace login.<br>Payment approvals use separate permissions.</p></div>
+      </div>
+
+      <div id="workspace-view" class="workspace-content" hidden>
+        <div class="success-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg></div>
+        <div class="section-number">YOU’RE SIGNED IN</div><h2 id="welcome-name">Welcome.</h2><p class="workspace-description">Your Countersign account is ready.</p>
+        <div class="account-card"><span>WORKSPACE ACCOUNT</span><strong id="account-name"></strong><p id="account-email"></p><div class="account-status"><span></span> Session active</div></div>
+        <div class="next-card"><h3>A starting point for your workspace</h3><p>Invoice uploads, payment activity and approval tools will be connected in the next version.</p></div>
+        <button id="logout-button" class="primary-button" type="button"><span>Sign out</span><span aria-hidden="true">↗</span></button><p id="workspace-message" class="form-message" role="alert" hidden></p>
+      </div>
+      <footer class="access-footer"><span>© <span id="year">2026</span> Countersign</span><span>Make every payment intentional.</span></footer>
+    </section>
+  </main>
+</body>
+</html>

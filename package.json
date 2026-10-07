@@ -1,0 +1,12 @@
+{
+  "name": "countersign-login",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Countersign basic login interface and local authentication server",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test test/auth.test.mjs"
+  }
+}
